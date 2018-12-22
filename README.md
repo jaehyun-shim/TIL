@@ -10,36 +10,36 @@
 
 ----------------------------------------------------------------------------------------------------------------------
 ### 목차
-- 알고리즘 (#Algorithm)
-- 자료구조 (#Data-Structure)
-- 운영체제 (#OS)
-- 프로그램언어 (#Programming-Language)
-- 네트워크 (#Network)
-- 데이터베이스 (#Database)
-- SW개발도구 (#SWDevTool)
-- 중학수학 (#MiddleSchool-Math)
+- [알고리즘] (#Algorithm)
+- [자료구조] (#Data-Structure)
+- [운영체제] (#OS)
+- [프로그램언어] (#Programming-Language)
+- [네트워크] (#Network)
+- [데이터베이스] (#Database)
+- [SW개발도구] (#SWDevTool)
+- [중학수학] (#MiddleSchool-Math)
 
 
 ---
-##Algorithm
+## Algorithm
 
 ---
-##Data-Structure
+## Data-Structure
 
 ---
-#OS
+## OS
 
 ---
-##Network
+## Network
 
 ---
-##Database
+## Database
 
 ---
-##SWDevTool
+## SWDevTool
 
 ---
-##MiddleSchool-Math
+## MiddleSchool-Math
 
 
 ## Other TIL Collections
