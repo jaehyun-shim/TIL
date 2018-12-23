@@ -3,22 +3,22 @@
 
 ## 작성법
 - 폴더와 파일명은 영문으로 작성.
-- Github-Flavoured Markdown으로 작성.(확장자는 .md)
+- Github-Flavoured Markdown으로 작성.(확장자는 .md //algorithm 제외.)
 - 짧고 간결한 핵심적인 문장을 사용. 
 - 필요한 설명이 있으면 관련된 정보가 포함된 외부 링크를 사용.
 - 최소 99% 이해한것만 업로드(잊혀지지않기를..).
 
 ----------------------------------------------------------------------------------------------------------------------
-### 목차
-- 알고리즘 (#Algorithm)
-- 자료구조 (#Data-Structure)
-- 운영체제 (#OS)
-- 프로그램언어 (#Programming-Language)
-- 네트워크 (#Network)
-- 데이터베이스 (#Database)
-- SW개발도구 (#SWDevTool)
-- 중학수학 (#MiddleSchool-Math)
 
+### 목차
+* [알고리즘](#Algorithm)
+* [자료구조](#Data-Structure)
+* [운영체제](#OS)
+* [프로그램언어](#Programming-Language)
+* [네트워크](#Network)
+* [데이터베이스](#Database)
+* [SW개발도구](#SWDevTool)
+* [중학수학](#MiddleSchool-Math)
 
 ---
 ##Algorithm
@@ -35,24 +35,23 @@
 * [하노이타워](algorithm/src/TheTowerOfHanoi.java)
 * [N의 시분초 구하기](algorithm/src/TimeOfHrMinSec.java)
 
+---
+## Data-Structure
 
 ---
-##Data-Structure
+## OS
 
 ---
-#OS
+## Network
 
 ---
-##Network
+## Database
 
 ---
-##Database
+## SWDevTool
 
 ---
-##SWDevTool
-
----
-##MiddleSchool-Math
+## MiddleSchool-Math
 
 
 ## Other TIL Collections
