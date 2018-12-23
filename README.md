@@ -21,7 +21,7 @@
 * [중학수학](#MiddleSchool-Math)
 
 ---
-##Algorithm
+## Algorithm
 * [원주율 구하기](algorithm/src/CircleRate.java)
 * [조건을 만족하는 수세기](algorithm/src/CountingANumberSatisfyingACondition.java)
 * [약수 구하기](algorithm/src/LastDayOfMonth.java)
