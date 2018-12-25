@@ -34,6 +34,9 @@
 * [직각삼각형 판별하기](algorithm/src/RightTriangleDivision.java)
 * [하노이타워](algorithm/src/TheTowerOfHanoi.java)
 * [N의 시분초 구하기](algorithm/src/TimeOfHrMinSec.java)
+* [디지털근 구하기](algorithm/src/DigitalPowerOfN.java)
+* [순서대로 출력하고 합 구하기](algorithm/src/SumOfInOrderPrint.java)
+* [완전수 구하기](algorithm/src/PerfectNumber.java)
 
 ---
 ## Data-Structure
