@@ -37,6 +37,14 @@
 * [디지털근 구하기](algorithm/src/DigitalPowerOfN.java)
 * [순서대로 출력하고 합 구하기](algorithm/src/SumOfInOrderPrint.java)
 * [완전수 구하기](algorithm/src/PerfectNumber.java)
+* [피타고라스 삼각형 찾기](algorithm/src/FindThePythagorasValues.java)
+* [숫자 삼각형 만들기](algorithm/src/NumberTriangle.java)
+* [파스칼 삼각형 만들기](algorithm/src/PascalTriangle.java)
+* [알파벳 출력하기](algorithm/src/PrintingTheAlphabet.java)
+* [계승 구하기](algorithm/src/PrintingTheFactorial.java)
+* [성적 열람](algorithm/src/ReadingGrades.java)
+* [선택정렬 오름차순](algorithm/src/SelectionSort.java)
+* [버블정렬 오름차순](algorithm/src/BubbleSort.java)
 
 ---
 ## Data-Structure
