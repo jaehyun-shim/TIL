@@ -8,14 +8,14 @@ public class PascalTriangle {
 
         n = Integer.parseInt(sc.nextLine());
 
-        p[1][n] = 1;
+        p[1][n] = 1;  // 맨위 꼭짓점의 숫자 가운대로 설정
 
         for (i = 2; i <= n; i++) {
-            for (j = 1; j <= n * 2; j++) {
-                p[i][j] = p[i - 1][j - 1] + p[i - 1][j + 1];
+            for (j = 1; j <= n * 2; j++) { // j==1 p[1][n]가 1이기 때문 0일때 부터 차례대로 대입
+                p[i][j] = p[i - 1][j - 1] + p[i - 1][j + 1]; // j-1은 위층의 왼쪽 j+1은 위층의 오른쪽을 의미
             }
         }
-        for (i = 1; i <= n; i++) {
+        for (i = 1; i <= n; i++) { // j==1 맨윗줄 1 출력
             for (j = 1; j <= n * 2; j++) {
                 String to = Integer.toString(p[i][j]);
                 int len = to.length();
