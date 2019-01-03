@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class ReadingGrades {
-    static final int C = 1; // 입력갯수
+    static final int C = 3; // 입력갯수
     static int[] KO = new int[C], EN = new int[C], MA = new int[C];
     static String[] NA = new String[C];
     static Scanner sc = new Scanner(System.in);
