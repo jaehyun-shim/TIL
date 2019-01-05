@@ -49,8 +49,8 @@
 * [선택정렬 오름차순](algorithm/src/SelectionSort.java)
 * [버블정렬 오름차순](algorithm/src/BubbleSort.java)
 * [삽입정렬 오름차순](algorithm/src/InsertionSort.java)
-* [선택정렬 석차구하기](algorithm/src/RankSelectionSort.java)
-* [버블정렬 석차구하기](algorithm/src/RankBubbleSort.java)
+* [선택정렬 석차구하기](algorithm/src/SelectionSortClassRanking.java)
+* [버블정렬 석차구하기](algorithm/src/BubbleSortClassRanking.java)
 
 ---
 ## Data-Structure
