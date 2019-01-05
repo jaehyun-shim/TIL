@@ -24,8 +24,9 @@
 ## Algorithm
 * [원주율 구하기](algorithm/src/CircleRate.java)
 * [조건을 만족하는 수세기](algorithm/src/CountingANumberSatisfyingACondition.java)
-* [약수 구하기](algorithm/src/LastDayOfMonth.java)
-* [월의 마지막날 구하기](algorithm/src/MaxValueAndMinValue.java)
+* [약수 구하기](algorithm/src/DivisorOfN.java)
+* [최댓값, 최솟값 구하기](algorithm/src/MaxValueAndMinValue.java)
+* [월의 마지막날 구하기](algorithm/src/LastDayOfMonth.java)
 * [A의 B승 구하기](algorithm/src/NPowerOfN.java)
 * [두 수의 합](algorithm/src/NumberSum.java)
 * [1~N 사이의 소수와 개수 구하기](algorithm/src/PrimeNumberCount.java)
@@ -39,12 +40,17 @@
 * [완전수 구하기](algorithm/src/PerfectNumber.java)
 * [피타고라스 삼각형 찾기](algorithm/src/FindThePythagorasValues.java)
 * [숫자 삼각형 만들기](algorithm/src/NumberTriangle.java)
-* [파스칼 삼각형 만들기](algorithm/src/PascalTriangle.java)
+* [파스칼 삼각형 만들기1](algorithm/src/PascalTriangle.java)
+* [파스칼 삼각형 만들기2](algorithm/src/PascalTriangle2.java)
+* [파스칼 삼각형 만들기3](algorithm/src/PascalTriangle3.java)
 * [알파벳 출력하기](algorithm/src/PrintingTheAlphabet.java)
 * [계승 구하기](algorithm/src/PrintingTheFactorial.java)
 * [성적 열람](algorithm/src/ReadingGrades.java)
 * [선택정렬 오름차순](algorithm/src/SelectionSort.java)
 * [버블정렬 오름차순](algorithm/src/BubbleSort.java)
+* [삽입정렬 오름차순](algorithm/src/InsertionSort.java)
+* [선택정렬 석차구하기](algorithm/src/RankSelectionSort.java)
+* [버블정렬 석차구하기](algorithm/src/RankBubbleSort.java)
 
 ---
 ## Data-Structure
