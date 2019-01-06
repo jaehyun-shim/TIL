@@ -1,6 +1,6 @@
 public class SelectionSortClassRanking {
     private static String[] NAME;
-    private static int KOREA[];
+    private static int KOREAN[];
     private static int ENGLISH[];
     private static int MATH[];
     private static float TOTAL[] = new float[4];
@@ -9,22 +9,17 @@ public class SelectionSortClassRanking {
 
     SelectionSortClassRanking(String[] name, int[] korean, int[] english, int[] math) {
         this.NAME = name;
-        this.KOREA = korean;
+        this.KOREAN = korean;
         this.ENGLISH = english;
         this.MATH = math;
-
-        for (int i = 0; i < name.length; i++) {
-            this.TOTAL[i] = korean[i] + english[i] + math[i];
-            this.AVERAGE[i] = String.format("%.2f", this.TOTAL[i] / 3);
-        }
     }
 
     public static String[] getNAME() {
         return NAME;
     }
 
-    public static int[] getKOREA() {
-        return KOREA;
+    public static int[] getKOREAN() {
+        return KOREAN;
     }
 
     public static int[] getENGLISH() {
@@ -47,22 +42,26 @@ public class SelectionSortClassRanking {
         return RANK;
     }
 
-    public static void main(String args[]) {
+
+    public static void getTitleAll() {
         int spacing[] = {3, 2, 2, 4, 4, 4, 1};
         String title[] = {"이름", "국어", "영어", "수학", "총점", "평균", "석차"};
         StringBuilder titleAll = new StringBuilder();
-
         for (int k = 0; k < title.length; k++) {
             int spacingInt = spacing[k] + 2;
             titleAll.append(String.format("%-" + spacingInt + "s", title[k]));
         }
+        System.out.println(titleAll);
+    }
 
-        new SelectionSortClassRanking(
-                new String[]{"홍길동", "이몽룡", "성춘향", "김서방"},
-                new int[]{90, 80, 70, 50},
-                new int[]{70, 30, 70, 90},
-                new int[]{80, 80, 40, 70});
+    public static void setCalculate() {
+        for (int i = 0; i < NAME.length; i++) {
+            TOTAL[i] = KOREAN[i] + ENGLISH[i] + MATH[i];
+            AVERAGE[i] = String.format("%.2f", TOTAL[i] / 3);
+        }
+    }
 
+    public static void setRanking() {
         for (int i = 0; i < getNAME().length - 1; i++) {
             for (int j = i + 1; j < getNAME().length; j++) {
                 if (Float.parseFloat(AVERAGE[i]) < Float.parseFloat(AVERAGE[j])) {
@@ -72,18 +71,30 @@ public class SelectionSortClassRanking {
                 }
             }
         }
+    }
 
-        System.out.println(titleAll);
-
+    public static void getContentsAll() {
         for (int i = 0; i < getNAME().length; i++) {
             System.out.println(String.format("%-" + 5 + "s", getNAME()[i]) +
-                    String.format("%-" + 5 + "s", getKOREA()[i]) +
+                    String.format("%-" + 5 + "s", getKOREAN()[i]) +
                     String.format("%-" + 5 + "s", getENGLISH()[i]) +
                     String.format("%-" + 5 + "s", getMATH()[i]) +
                     String.format("%-" + 7 + "s", getTOTAL()[i]) +
                     String.format("%-" + 7 + "s", getAVERAGE()[i]) +
-                    String.format("%" + 3 + "s", RANK[i]));
+                    String.format("%" + 3 + "s", getRANK()[i]));
         }
+    }
+
+    public static void main(String args[]) {
+        new SelectionSortClassRanking(
+                new String[]{"홍길동", "이몽룡", "성춘향", "김서방"},
+                new int[]{90, 80, 70, 50},
+                new int[]{70, 30, 70, 90},
+                new int[]{80, 80, 40, 70});
+        setCalculate();
+        setRanking();
+        getTitleAll();
+        getContentsAll();
     }
 
 }
