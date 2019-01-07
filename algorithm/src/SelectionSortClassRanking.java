@@ -61,7 +61,7 @@ public class SelectionSortClassRanking {
         }
     }
 
-    public static void setRanking() {
+    public static void setRanking() { // 선택정렬
         for (int i = 0; i < getNAME().length - 1; i++) {
             for (int j = i + 1; j < getNAME().length; j++) {
                 if (Float.parseFloat(AVERAGE[i]) < Float.parseFloat(AVERAGE[j])) {
