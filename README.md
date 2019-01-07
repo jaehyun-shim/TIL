@@ -51,6 +51,9 @@
 * [삽입정렬 오름차순](algorithm/src/InsertionSort.java)
 * [선택정렬 석차구하기](algorithm/src/SelectionSortClassRanking.java)
 * [버블정렬 석차구하기](algorithm/src/BubbleSortClassRanking.java)
+* [2차원배열원소조작](algorithm/src/TwoDimensionalArrayOperation.java)
+* [2차원배열원소조작2](algorithm/src/TwoDimensionalArrayOperation2.java)
+
 
 ---
 ## Data-Structure
