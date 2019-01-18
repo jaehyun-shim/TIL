@@ -52,8 +52,8 @@
 * [선택정렬 석차구하기](algorithm/src/SelectionSortClassRanking.java)
 * [버블정렬 석차구하기](algorithm/src/BubbleSortClassRanking.java)
 * [2차원배열원소조작](algorithm/src/TwoDimensionalArrayOperation.java)
-* [2차원배열원소조작2](algorithm/src/TwoDimensionalArrayOperation2.java)
 * [행렬조작](algorithm/src/MatrixOperation.java)
+* [백준알고리즘-2839](algorithm/src/Back2839.java)
 
 
 ---
