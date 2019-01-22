@@ -14,7 +14,7 @@ class TreeNode {
     }
 }
 
-class SquaresOfASortedArray {
+class RangeSumOfBST{
     int ans;
 
     public int rangeSumBST(TreeNode root, int L, int R) {
@@ -90,7 +90,7 @@ class MainClass {
             line = in.readLine();
             int R = Integer.parseInt(line);
 
-            int ret = new SquaresOfASortedArray().rangeSumBST(root, L, R);
+            int ret = new RangeSumOfBST().rangeSumBST(root, L, R);
 
             String out = String.valueOf(ret);
 
