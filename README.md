@@ -57,7 +57,15 @@
 
 
 ---
+## Java
+* [JVM & GC](java/jvm_basic.md)
+* [쓰레드](java/thread/ThreadBasic.md)
+
+---
 ## Data-Structure
+* [순차검색](dataStructure/SequentialSearch.md)
+* [이진검색](dataStructure/BinarySearch.md)
+* [이진트리검색](dataStructure/BinarySearchTree.md)
 * [해싱](dataStructure/Hashing.md)
 
 ---
