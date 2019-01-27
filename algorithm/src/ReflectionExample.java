@@ -1,21 +1,38 @@
-import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-public class ReflectionExample {
+public class ReflectionExample implements Runnable {
+    int seq;
 
-    class reflectString {
-
+    public ReflectionExample(int seq) {
+        this.seq = seq;
     }
 
-    public static void main(String args[]) {
+    @Override
+    public void run() {
+        System.out.println(this.seq + " thread start.");
         try {
-            Class cls = Class.forName("java.lang.String");
-            Object arr = Array.newInstance(cls, 10);
-            Array.set(arr, 5, "this is a test");
-            String s = (String) Array.get(arr, 5);
-            System.out.println(s);
-        } catch (Throwable e) {
-            System.err.println(e);
+            Thread.sleep(1000);
+        } catch (Exception e) {
         }
+        System.out.println(this.seq + " thread end.");
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Thread> threads = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            Thread t = new Thread(new ReflectionExample(i));
+            t.start();
+            threads.add(t);
+        }
+
+        for (int i = 0; i < threads.size(); i++) {
+            Thread t = threads.get(i);
+            try {
+                t.join();
+            } catch (Exception e) {
+            }
+        }
+        System.out.println("main end.");
     }
 
 }
