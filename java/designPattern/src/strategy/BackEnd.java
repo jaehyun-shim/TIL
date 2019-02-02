@@ -4,6 +4,7 @@ public class BackEnd extends Developer{
     public BackEnd(){
         skill = new ServerSkill();
         career = new RegularCareer();
+        certificate = new DomesticCertificate();
     }
 
     public void contents(){
