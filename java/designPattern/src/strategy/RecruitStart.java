@@ -7,7 +7,7 @@ public class RecruitStart {
         backEnd.career.career();
         backEnd.skill.skill();
         backEnd.certificate.certificate();
-        
+
         System.out.println("----------------");
 
         Developer frontEnd = new FrontEnd();
