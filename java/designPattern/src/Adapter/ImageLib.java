@@ -1,19 +1,26 @@
 package Adapter;
 
 public class ImageLib {
-    public void fileDownload(String fileName){
-        System.out.println("파일다운로드");
+
+    private String fileName;
+
+    public ImageLib(String fileName) {
+        this.fileName = fileName;
     }
 
-    public void fileUpload(String fileName){
-        System.out.println("파일업로드");
+    public void fileDownload(){
+        System.out.println(fileName + " 파일다운로드");
     }
 
-    public void fileViewer(String fileName){
-        System.out.println("파일보기");
+    public void fileUpload(){
+        System.out.println(fileName + " 파일업로드");
     }
 
-    public void fileDelete(String fileName){
-        System.out.println("파일삭제");
+    public void fileViewer(){
+        System.out.println(fileName + " 파일보기");
+    }
+
+    public void fileDelete(){
+        System.out.println(fileName + " 파일삭제");
     }
 }

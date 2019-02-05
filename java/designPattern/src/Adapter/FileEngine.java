@@ -1,9 +1,9 @@
 package Adapter;
 
-public interface FileEngine {
-    public void fileDownload(String fileName);
-    public void fileUpload(String fileName);
-    public void fileViewer(String fileName);
-    public void fileList(String listName);
-    public void fileDelete(String fileName);
+public interface FileEngine{
+    public void fileDownload();
+    public void fileUpload();
+    public void fileViewer();
+    public void fileDelete();
+    public void fileList(String[] list);
 }
