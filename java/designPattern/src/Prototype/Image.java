@@ -1,8 +1,6 @@
 package Prototype;
 
-import Factory.FileInfo;
-
-public abstract class Image implements FileInfo {
+public abstract class Image extends FileInfo {
     private final String NAME = "image";
 
     @Override
@@ -10,12 +8,7 @@ public abstract class Image implements FileInfo {
         return new Image() {
             @Override
             public void download() {
-
-            }
-
-            @Override
-            public void upload() {
-
+                System.out.println("다운로드..");
             }
         };
     }
