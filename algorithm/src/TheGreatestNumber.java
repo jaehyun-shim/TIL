@@ -88,9 +88,7 @@ public class TheGreatestNumber {
 
         int size = list.size();
 
-        /*Collections.sort(list, (num1, num2) -> {
-            return (num2 + num1).compareTo(num1 + num2);
-        });*/
+        //Collections.sort(list, (a, b) -> (b + a).compareTo(b + a));
 
         Collections.sort(list, new Comparator<String>() {
             @Override
