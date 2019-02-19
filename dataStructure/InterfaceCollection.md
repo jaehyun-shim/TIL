@@ -1,10 +1,13 @@
-# 컬렉션 프레임워크(collection framework)
-### java.util 패키지 내에 자료구조를 이용하여 구현해 놓은 컨테이너 클래스.
+## 컬렉션 프레임워크(collection framework)
+### 데이터를 저장하는 자료 구조와 데이터를 처리하는 알고리즘을 구조화하여 java.util 패키지로 구현해 놓은 컨테이너 클래스.
 
-## 컬렉션 프레임워크 구조 및 종류
+#### 컬렉션 프레임워크 구조 및 종류
 - Superinterfaces
   - Iterable
-    - 테스트입니다.
+    - Collection 인터페이스에서 Iterable를 확장했는데 Iterable 인터페이스는 forEach(Consumer<? super T> action), Iterable(), spliterator() 메소드가 유일하다.
+    ```
+    public interface Collection<E> extends Iterable<E>
+    ```
 - Subinterfaces
   - BeanContext
   - BeanContextServices
