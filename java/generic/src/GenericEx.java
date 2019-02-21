@@ -1,4 +1,8 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class GenericEx {
     public static void main(String[] args) {
@@ -80,3 +84,34 @@ class DemoClass {
     }
 }
 
+class ExClass {
+    /*private static <T> Collection<T> add(Collection<T> list, T element) {
+        list.add(element);
+        return list;
+    }*/
+
+    private static <T, R extends Collection<T>> R add(R collection, T element) {
+        collection.add(element);
+        return collection;
+    }
+
+    List<String> list = new ArrayList<>();
+    List<String> addList = add(list, "hello");
+    List<String> addList2 = (List<String>)add(list, "hello");
+
+
+    private static <T, R> T addAll(R r) {
+        Map<Integer, String> map = newHashMap();
+        map.put(1,"");
+        return null;
+    }
+
+    static <K,V> HashMap<K,V> newHashMap(){
+        return new HashMap<K,V>();
+    }
+
+
+
+
+
+}

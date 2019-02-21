@@ -10,7 +10,8 @@
 	T - Type  
 	V - Value  
 
-### 테스트
+### 제네릭 타입(`class<T>, interface<T>`)
+---
  - 타입 `<T>` 기본클래스 생성  
 <pre>
 class TestClass<<strong>T</strong>> {
@@ -30,5 +31,14 @@ class TestClass<<strong>String</strong>> {
 &nbsp;&nbsp;&nbsp;&nbsp;public <strong>String</strong> get() { return t; }
 &nbsp;&nbsp;&nbsp;&nbsp;public void set(<strong>String</strong> t) { this.t = t; }
 }
-</pre>
+</pre>  
+
+### 제네릭 메소드 타입(`<T, R> class<R> R method(T t)`)
+---
+
+
+```ruby
+function aa(){
+
+```
 
