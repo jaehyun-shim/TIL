@@ -1,6 +1,11 @@
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+import static org.junit.jupiter.api.Assertions.assertLinesMatch;
 
 public class BackTest {
 
@@ -21,6 +26,8 @@ public class BackTest {
     Back10825 back10825 = new Back10825();
 
     @Test
+    @DisplayName("백준-국영수")
+    @Deprecated
     public void back10825() {
         assertEquals("Donghyuk\n" +
                 "Sangkeun\n" +
@@ -34,5 +41,11 @@ public class BackTest {
                 "Junkyu\n" +
                 "Soong\n" +
                 "Taewhan", back10825.solution(string));
+    }
+
+    @Test
+    @DisplayName("백준-국영수")
+    public void back10825_ListSameTest(){
+        assertLinesMatch(back10825.solution_list(string), back10825.solution_list(string));
     }
 }

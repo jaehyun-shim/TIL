@@ -68,6 +68,20 @@ public class Back10825 {
         }
     }
 
+    public static List<String> solution_list(String string) {
+        String name;
+        List<String> studentDataList = new ArrayList<>();
+        String[] studentDataArrayRow = splitArrayFormat(string, "\n");
+
+        for (int i = 1; i < studentDataArrayRow.length; i++) {
+            String[] studentDataArrayCol = splitArrayFormat(studentDataArrayRow[i], " ");
+            name = studentDataArrayCol[0];
+            studentDataList.add(name);
+        }
+
+        return studentDataList;
+    }
+
     public static String solution(String string) {
         String name;
         int kor, eng, mat;
@@ -83,7 +97,7 @@ public class Back10825 {
             studentDataList.add(new Student(name, kor, eng, mat));
         }
 
-        Collections.sort(studentDataList);
+        Collections.sort(studentDataList); //Quick sort
         Iterator<Student> itr = studentDataList.iterator();
         StringBuilder sb = new StringBuilder();
         while (itr.hasNext()) {
