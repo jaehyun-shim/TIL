@@ -50,36 +50,28 @@ class Student implements Comparable<Student> {
         }
     }*/
 
-    /*@Override
+    @Override
     public String toString() {
         return NAME;
-    }*/
+    }
 }
 
 public class Back10825 {
-
     static String[] splitArrayFormat(String strAll, String type) {
         return strAll.split(type);
     }
 
-    static String print(List list) {
+    static void print(List list) {
         Iterator<Student> itr = list.iterator();
-
-        StringBuffer sb = new StringBuffer();
-
         while (itr.hasNext()) {
-            sb.append(itr.next().toString()).append("\n");
+            System.out.println(itr.next().toString());
         }
-
-        return sb.toString();
     }
 
     public static String solution(String string) {
         String name;
         int kor, eng, mat;
-
         List<Student> studentDataList = new ArrayList<>();
-
         String[] studentDataArrayRow = splitArrayFormat(string, "\n");
 
         for (int i = 1; i < studentDataArrayRow.length; i++) {
@@ -91,32 +83,34 @@ public class Back10825 {
             studentDataList.add(new Student(name, kor, eng, mat));
         }
 
-
         Collections.sort(studentDataList);
-        //System.out.println(Student.class.toString());
-        //print(studentDataList);
-        return print(studentDataList);
+        Iterator<Student> itr = studentDataList.iterator();
+        StringBuilder sb = new StringBuilder();
+        while (itr.hasNext()) {
+            sb.append(itr.next().toString());
+            if (itr.hasNext() == true) sb.append("\n");
+        }
+        return sb.toString();
     }
 
-    /*public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-
+    public static void main(String[] args) {
         String name;
         int kor, eng, mat;
-
         List<Student> studentDataList = new ArrayList<>();
 
-        *//*for (int i = 0; i < N; i++) {
+        /*Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for (int i = 0; i < N; i++) {
             name = sc.next();
             kor = sc.nextInt();
             eng = sc.nextInt();
             mat = sc.nextInt();
 
             studentDataList.add(new Student(name, kor, eng, mat));
-        }*//*
+        }*/
 
-        *//*String string = "12\n" +
+        String string = "12\n" +
                 "Junkyu 50 60 100\n" +
                 "Sangkeun 80 60 50\n" +
                 "Sunyoung 80 70 100\n" +
@@ -130,7 +124,9 @@ public class Back10825 {
                 "nsj 80 80 80\n" +
                 "Taewhan 50 60 90";
 
-        String[] studentDataArrayRow = splitArrayFormat(string, "\n");
+        solution(string);
+
+        /*String[] studentDataArrayRow = splitArrayFormat(string, "\n");
 
         for (int i = 1; i < studentDataArrayRow.length; i++) {
             String[] studentDataArrayCol = splitArrayFormat(studentDataArrayRow[i], " ");
@@ -144,7 +140,7 @@ public class Back10825 {
 
         Collections.sort(studentDataList);
 
-        print(studentDataList);*//*
-    }*/
+        print(studentDataList);*/
+    }
 
 }

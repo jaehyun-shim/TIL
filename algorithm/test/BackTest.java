@@ -33,6 +33,6 @@ public class BackTest {
                 "Haebin\n" +
                 "Junkyu\n" +
                 "Soong\n" +
-                "Taewhan\n", back10825.solution(string));
+                "Taewhan", back10825.solution(string));
     }
 }
