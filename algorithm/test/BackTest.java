@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.hasItems;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertLinesMatch;
@@ -46,6 +48,6 @@ public class BackTest {
     @Test
     @DisplayName("백준-국영수")
     public void back10825_ListSameTest(){
-        assertLinesMatch(back10825.solution_list(string), back10825.solution_list(string));
+        assertThat(back10825.solution_list(string), hasItems("Soong"));
     }
 }
