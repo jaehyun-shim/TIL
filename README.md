@@ -58,7 +58,7 @@
 
 ---
 ## Java
-* [JVM & GC](java/jvm_basic.md)
+* [JVM & GC](java/jvm/jvm_basic.md)
 * [쓰레드](java/thread/ThreadBasic.md)
 
 ---
