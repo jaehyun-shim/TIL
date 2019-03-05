@@ -5,7 +5,7 @@
  */
 public class NumRookCaptures {
 
-    
+
     public static void main(String[] args) {
 
     }
