@@ -1,5 +1,21 @@
 import java.util.ArrayList;
 
+class ObjectClass<T> {
+    private T t;
+
+    public ObjectClass(T t) {
+        this.t = t;
+    }
+
+    public T getT() {
+        return t;
+    }
+
+    public void setT(T t) {
+        this.t = t;
+    }
+}
+
 public class GenericClass {
     public static void main(String[] args) {
         // String generic
@@ -15,7 +31,7 @@ public class GenericClass {
         integerList.add(100);
         integerList.add(200);
 
-        classList.add(new ObjectClass());
+        classList.add(new ObjectClass(100));
         classList.add(new ObjectClass("Test"));
 
         for (String i : stringList) {
@@ -29,6 +45,9 @@ public class GenericClass {
         for (ObjectClass i : classList) {
             System.out.println(i);
         }
+
+
+
 
         // 제네릭을 사용하지 않은 경우에는 타입을 형변환하여 값을 얻을 수 있다.
         ArrayList notGenericList = new ArrayList();
