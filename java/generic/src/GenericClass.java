@@ -34,6 +34,7 @@ public class GenericClass {
         classList.add(new ObjectClass(100));
         classList.add(new ObjectClass("Test"));
 
+
         for (String i : stringList) {
             System.out.println(i);
         }
@@ -45,7 +46,6 @@ public class GenericClass {
         for (ObjectClass i : classList) {
             System.out.println(i);
         }
-
 
 
 

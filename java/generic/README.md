@@ -50,7 +50,7 @@ class TestClass<<strong>String</strong>> {
 
 - 제네릭 인터페이스 사용방법
 
- 
+
 ### 제네릭 메소드 타입(`<T, R> class<R> R method(T t)`)
 
 - 두개 이상의 파라미터에 각각 제네릭을 설정하는 방법  
@@ -59,14 +59,23 @@ public <T1, T2> Integer genericMethod(T1 t1, T2 t2)
 - 제네릭 클래스를 리턴타입으로 정의하는 방법  
 public <String> genericClass<String> genericMethod()
 
-- 메소드의 인자에 T가 선언되어 있는경우 리턴타입 바로앞에 <T> 제너릭 타입을 선언하는방법  
+- 메소드의 파라미터에 T가 선언되어 있는경우 리턴타입 바로앞에 <T> 제너릭 타입을 선언하는방법  
 public static <T> List<T> genericMethod(List<T> list, T item)
 
 
 ### WildCard Generic Type(`<?>`)
  - 물음표로 사용되며 타입명에 대해 제한 않음을 의미한다. 사용방법은 아래와 같다.  
-  - <?> 타입 변수에 모든 타입을 사용할 수 있음.
-  - <? extends T> T 타입과 T 타입을 상속받는 자손 클래스 타입만을 사용할 수 있음.
-  - <? super T> T 타입과 T 타입이 상속받은 조상 클래스 타입만을 사용할 수 있음.  
+	- ####`<?>` 타입 변수에 모든 타입을 사용할 수 있음.  
+  	 - 사용방법1  
 
+   
+   - ####`<? extends T>` T 타입과 T 타입을 상속받는 자손 클래스 타입만을 사용할 수 있음.
+	 - 사용방법2  
+
+   
+  - ####`<? super T>` T 타입과 T 타입이 상속받은 조상 클래스 타입만을 사용할 수 있음.  
+	 - 사용방법3  
+
+   
+ 
   
