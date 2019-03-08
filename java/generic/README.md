@@ -65,16 +65,13 @@ public static <T> List<T> genericMethod(List<T> list, T item)
 
 ### WildCard Generic Type(`<?>`)
  - 물음표로 사용되며 타입명에 대해 제한 않음을 의미한다. 사용방법은 아래와 같다.  
-	- ####`<?>` 타입 변수에 모든 타입을 사용할 수 있음.  
-  	 - 사용방법1  
+	- ####`<?>` 타입 변수에 모든 타입을 사용할 수 있음.  [예제소스보기](java/generic/src/GenericWildCard.java)  
 
    
-   - ####`<? extends T>` T 타입과 T 타입을 상속받는 자손 클래스 타입만을 사용할 수 있음.
-	 - 사용방법2  
+   - ####`<? extends T>` T 타입과 T 타입을 상속받는 자손 클래스 타입만을 사용할 수 있음.  [예제소스보기](java/generic/src/GenericWildCard.java) 
 
    
-  - ####`<? super T>` T 타입과 T 타입이 상속받은 조상 클래스 타입만을 사용할 수 있음.  
-	 - 사용방법3  
+  - ####`<? super T>` T 타입과 T 타입이 상속받은 조상 클래스 타입만을 사용할 수 있음.  [예제소스보기](java/generic/src/GenericWildCard.java) 
 
    
  
