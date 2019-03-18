@@ -1,6 +1,11 @@
 import java.util.Stack;
 
-public class AlgoTest {
+/**
+ * Created by jhshim3478@gmail.com on 2019-03-19
+ * Blog : http://jaehyun-shim.github.io/blog/
+ * Github : http://github.com/jaehyun-shim
+ */
+public class BrownBaeminAlgo {
     public static void main(String[] args) {
         String A = "browoanoommnaon"; // zyelleyz
         solution(A);
@@ -32,5 +37,4 @@ public class AlgoTest {
             System.out.print(val);
         }
     }
-
 }
