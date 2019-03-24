@@ -30,7 +30,6 @@ public class PubSub {
                     public void request(long n) {
                         // iter.forEach(s -> subscriber.onNext(s));
                         // subscriber.onComplete();
-
                         // Future<?> f = es.submit(() -> { // 중간에 작업을 취소할 수 있음.(비동기)
                         es.execute(() -> {
                             int i = 0;
