@@ -1,3 +1,5 @@
+package reactiveStreams;
+
 import java.util.Iterator;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -10,6 +12,15 @@ import java.util.stream.Stream;
  * Created by jhshim3478@gmail.com on 2019-03-19
  * Blog : http://jaehyun-shim.github.io/blog/
  * Github : http://github.com/jaehyun-shim
+ *
+ *
+ * Publisher > [Data1] > Operator(가공) > [Data2] > Op2 > [Data3] > Subscriber
+ *
+ * 스트림 맵핑 필터 리드서 가공작업
+ *
+ * 1. map (d1 > fn > d2)
+ *
+ *
  */
 public class PubSub {
     public static void main(String[] args) throws InterruptedException {
