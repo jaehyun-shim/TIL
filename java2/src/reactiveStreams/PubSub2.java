@@ -16,16 +16,18 @@ import java.util.stream.Stream;
  * <p>
  * Publisher > [Data1] > Operator(가공) > [Data2] > Op2 > [Data3] > Subscriber
  * <p>
- * 스트림 맵핑 필터 리드서 가공작업
+ * Stream mapping filter readSub operator
  * <p>
  * 1. map (d1 > fn > d2)
  */
-@Slf4j
+//@Slf4j
 public class PubSub2 {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(PubSub2.class);
+
     public static void main(String[] args) throws InterruptedException {
         Flow.Publisher<Integer> pub = iterPub(Stream.iterate(1, a -> a + 1).limit(10).collect(Collectors.toList()));
         Flow.Publisher<Integer> mapPub = mapPub(pub, (Function<Integer, Integer>) s -> s * 10);
-        Flow.Publisher<Integer> map2Pub = mapPub(pub, (Function<Integer, Integer>) s -> -s);
+        //Flow.Publisher<Integer> map2Pub = mapPub(pub, (Function<Integer, Integer>) s -> -s);
         mapPub.subscribe(logSub());
     }
 
