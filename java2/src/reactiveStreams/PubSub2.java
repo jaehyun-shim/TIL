@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.concurrent.Flow;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -20,40 +21,38 @@ import java.util.stream.Stream;
  * <p>
  * 1. map (d1 > fn > d2)
  */
-//@Slf4j
+@Slf4j
 public class PubSub2 {
-    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(PubSub2.class);
+    //private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(PubSub2.class);
 
     public static void main(String[] args) throws InterruptedException {
         Flow.Publisher<Integer> pub = iterPub(Stream.iterate(1, a -> a + 1).limit(10).collect(Collectors.toList()));
-        Flow.Publisher<Integer> mapPub = mapPub(pub, (Function<Integer, Integer>) s -> s * 10);
-        //Flow.Publisher<Integer> map2Pub = mapPub(pub, (Function<Integer, Integer>) s -> -s);
-        mapPub.subscribe(logSub());
+        //Flow.Publisher<Integer> mapPub = mapPub(pub, (Function<Integer, Integer>) s -> s * 10);
+        //Flow.Publisher<Integer> map2Pub = mapPub(mapPub, (Function<Integer, Integer>) s -> -s);
+        //Flow.Publisher<Integer> sumPub = sumPub(pub);
+        Flow.Publisher<Integer> reducePub = reducePub(pub, 0, (BiFunction<Integer, Integer, Integer>) (a, b) -> a + b); //BiFunction: Param three
+
+        reducePub.subscribe(logSub());
     }
 
-    private static Flow.Publisher<Integer> mapPub(Flow.Publisher<Integer> pub, Function<Integer, Integer> f) {
+    /*
+     * BiFunction 을 이용하여 시작(기준 a)값과 합할 b를 각자릿수에 Sum Mapping
+     * */
+    private static Flow.Publisher<Integer> reducePub(Flow.Publisher<Integer> pub, int init, BiFunction<Integer, Integer, Integer> bf) {
         return new Flow.Publisher<Integer>() {
-
             @Override
             public void subscribe(Flow.Subscriber<? super Integer> sub) {
-                pub.subscribe(new Flow.Subscriber<Integer>() {
-                    @Override
-                    public void onSubscribe(Flow.Subscription s) {
-                        sub.onSubscribe(s);
-                    }
+                pub.subscribe(new DelegateSub(sub) {
+                    int result = init;
 
                     @Override
                     public void onNext(Integer i) {
-                        sub.onNext(f.apply(i));
-                    }
-
-                    @Override
-                    public void onError(Throwable t) {
-                        sub.onError(t);
+                        result = bf.apply(result, i);
                     }
 
                     @Override
                     public void onComplete() {
+                        sub.onNext(result);
                         sub.onComplete();
                     }
                 });
@@ -61,35 +60,87 @@ public class PubSub2 {
         };
     }
 
+    /*
+     * Function 을 이용한 Next 의 각자릿수에 합계 Mapping
+     * */
+    private static Flow.Publisher<Integer> mapPub(Flow.Publisher<Integer> pub, Function<Integer, Integer> f) {
+        return new Flow.Publisher<Integer>() {
 
+            @Override
+            public void subscribe(Flow.Subscriber<? super Integer> sub) {
+                pub.subscribe(new DelegateSub(sub) {
+                    @Override
+                    public void onNext(Integer i) {
+                        super.onNext(f.apply(i));
+                    }
+                });
+            }
+        };
+    }
+
+    /*
+     * Function 을 이용한 Next 의 각자릿수에 음수 Mapping
+     * */
+    private static Flow.Publisher<Integer> sumPub(Flow.Publisher<Integer> pub) {
+        return new Flow.Publisher<Integer>() {
+            @Override
+            public void subscribe(Flow.Subscriber<? super Integer> sub) {
+                pub.subscribe(new DelegateSub(sub) {
+                    int sum = 0;
+
+                    @Override
+                    public void onNext(Integer i) {
+                        sum += i;
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        sub.onNext(sum);
+                        super.onComplete();
+                    }
+                });
+            }
+        };
+    }
+
+    /*
+     * 출력 Sub
+     * */
     private static Flow.Subscriber<Integer> logSub() {
         return new Flow.Subscriber<Integer>() {
             @Override
             public void onSubscribe(Flow.Subscription s) {
+                System.out.println("onSubscribe:");
                 log.debug("onSubscribe:");
                 s.request(Long.MAX_VALUE);
             }
 
             @Override
             public void onNext(Integer i) {
+                System.out.println("onNext:" + i);
                 log.debug("onNext:{}", i);
 
             }
 
             @Override
             public void onError(Throwable t) {
+                System.out.println("onError:");
                 log.debug("onError:", t);
 
             }
 
             @Override
             public void onComplete() {
+                System.out.println("onComplete:");
                 log.debug("onComplete:");
 
             }
         };
     }
 
+    /*
+     * 요청값에 대한 루프 반환
+     * */
     private static Flow.Publisher<Integer> iterPub(List<Integer> iter) {
         return new Flow.Publisher<Integer>() {
             @Override
@@ -98,6 +149,8 @@ public class PubSub2 {
                     @Override
                     public void request(long n) {
                         try {
+                            System.out.println("iterPub:");
+
                             iter.forEach(s -> sub.onNext(s));
                             sub.onComplete();
                         } catch (Throwable t) {
