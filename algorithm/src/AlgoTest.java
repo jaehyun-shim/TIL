@@ -2,11 +2,43 @@ import java.util.Stack;
 
 public class AlgoTest {
     public static void main(String[] args) {
+        int n = 6, a = 0;
+
+        String answer = "";
+
+        while (n > 0) {
+            n = n / 3; // ex: 3
+            System.out.println("N : " + n);
+            a = n % 3; // ex: 3
+            System.out.println("A : " + a);
+
+            if (a == 0) n -= 1;
+
+            answer = "421".split("")[a] + answer;
+            System.out.println("answer : " + "412".split("")[a]);
+        }
+
+        System.out.println("--------------------");
+        System.out.println("Final : " + answer);
+    }
+
+    /*
+    public static void main(String[] args) {
         String A = "browoanoommnaon"; // zyelleyz
         solution(A);
     }
 
-    public static String[] reverse(String[] A) {
+    private static int solution(int S) {
+        int R = 0;
+
+        for (int i = 0; i < S ; i++) {
+
+        }
+
+        return R;
+    }*/
+
+    /*public static String[] reverse(String[] A) {
         String[] result = new String[A.length];
         for (int i = A.length - 1; i >= 0; i--) {
             result[(A.length - i) - 1] = A[i];
@@ -31,6 +63,6 @@ public class AlgoTest {
             String val = (String) stack.pop();
             System.out.print(val);
         }
-    }
+    }*/
 
 }
