@@ -1,5 +1,3 @@
-import java.util.Stack;
-
 public class AlgoTest {
     public static void main(String[] args) {
         int n = 6, a = 0;
