@@ -1,5 +1,5 @@
 public class AlgoTest {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         int n = 6, a = 0;
 
         String answer = "";
@@ -18,7 +18,7 @@ public class AlgoTest {
 
         System.out.println("--------------------");
         System.out.println("Final : " + answer);
-    }
+    }*/
 
     /*
     public static void main(String[] args) {
