@@ -23,8 +23,6 @@ import java.util.stream.Stream;
  */
 @Slf4j
 public class PubSub2 {
-    //private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(PubSub2.class);
-
     public static void main(String[] args) throws InterruptedException {
         Flow.Publisher<Integer> pub = iterPub(Stream.iterate(1, a -> a + 1).limit(10).collect(Collectors.toList()));
         //Flow.Publisher<Integer> mapPub = mapPub(pub, (Function<Integer, Integer>) s -> s * 10);
