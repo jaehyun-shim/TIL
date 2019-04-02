@@ -29,7 +29,6 @@ public class PubSub2 {
         //Flow.Publisher<Integer> map2Pub = mapPub(mapPub, (Function<Integer, Integer>) s -> -s);
         //Flow.Publisher<Integer> sumPub = sumPub(pub);
         Flow.Publisher<Integer> reducePub = reducePub(pub, 0, (BiFunction<Integer, Integer, Integer>) (a, b) -> a + b); //BiFunction: Param three
-
         reducePub.subscribe(logSub());
     }
 
